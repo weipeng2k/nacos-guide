@@ -8,41 +8,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <description>服务发现的示例</description>
+    <modules>
+        <module>nacos-guide-service-discovery-pub</module>
+        <module>nacos-guide-service-discovery-sub</module>
+    </modules>
 
     <artifactId>nacos-guide-service-discovery</artifactId>
     <name>nacos-guide-service-discovery</name>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-client</artifactId>
-        </dependency>
-        <!-- TEST -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+    <packaging>pom</packaging>
 
 </project>
