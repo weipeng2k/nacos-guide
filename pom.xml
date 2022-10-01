@@ -24,6 +24,7 @@
         <spring-framework.version>5.3.23</spring-framework.version>
         <nacos.version>2.1.1</nacos.version>
         <nacos-starter.version>0.2.12</nacos-starter.version>
+        <guava.version>29.0-jre</guava.version>
     </properties>
 
     <dependencyManagement>
@@ -60,6 +61,11 @@
                 <groupId>com.alibaba.boot</groupId>
                 <artifactId>nacos-config-spring-boot-starter</artifactId>
                 <version>${nacos-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
 
             <!-- Self Projects-->
