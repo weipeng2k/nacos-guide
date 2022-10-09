@@ -6,6 +6,7 @@ import com.alibaba.nacos.api.naming.NamingService;
 import com.alibaba.nacos.api.naming.pojo.Instance;
 
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,6 +21,9 @@ public class PubApplication implements CommandLineRunner, InitializingBean {
 
     private NamingService namingService;
 
+    @Value("${server.port}")
+    private int port;
+
     public static void main(String[] args) {
         SpringApplication.run(PubApplication.class, args);
     }
@@ -27,9 +31,9 @@ public class PubApplication implements CommandLineRunner, InitializingBean {
     @Override
     public void run(String... args) throws Exception {
         Instance instance = new Instance();
-        instance.setInstanceId("192.168.50.177:8080");
+        instance.setInstanceId("192.168.50.177:" + port);
         instance.setIp("192.168.50.177");
-        instance.setPort(8080);
+        instance.setPort(port);
         namingService.registerInstance("io.github.weipeng2k.scheduler.works", instance);
     }
 
